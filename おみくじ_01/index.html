@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<button onclick="draw()">おみくじを引く</button>
+		<p>今年のあなたの運勢は、<span id="fortune" class="fortune">吉</span>です</p>
+	</div>
+	<script>
+		const omikuzi = [
+			'大吉',
+			'吉',
+			'中吉',
+			'末吉',
+			'凶',
+		]
+		function draw(){
+			const key = Math.floor(Math.random()*omikuzi.length)
+			console.log(key)
+			const fortune = document.getElementById("fortune")
+			fortune.textContent = omikuzi[key]
+			const result = omikuzi[key]
+
+			if(result == "大吉"){
+				alert("きた！");
+			} else if(result == "凶"){
+				alert("あ。。")
+			} else {
+				alert("うん。まぁ")
+			}
+		};
+	</script>
+</body>
+</html>
